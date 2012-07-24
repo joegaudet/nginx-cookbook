@@ -138,7 +138,7 @@ default[:nginx][:https]   = "on"
 # Enables default site
 #
 default[:nginx][:default_site] = true
-default[:nginx][:apps]         = []
+default[:nginx][:apps]         = {}
 
 # Status
 #
