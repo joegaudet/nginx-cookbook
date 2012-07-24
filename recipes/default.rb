@@ -2,6 +2,8 @@ require_recipe "apt"
 
 apt_repository "nginx" do
   uri "http://ppa.launchpad.net/nginx/stable/ubuntu"
+  distribution "precise"
+  components ["main"]
   keyserver "keyserver.ubuntu.com"
   key "C300EE8C"
   action :add
@@ -47,6 +49,14 @@ template "nginx.conf" do
   mode 0644
   backup false
   notifies :restart, resources(:service => "nginx"), :delayed
+end
+
+template "mime.types" do
+  path "#{node[:nginx][:dir]}/mime.types"
+  source "mime.types.erb"
+  owner "root"
+  group "root"
+  mode 0644
 end
 
 template "#{node[:nginx][:dir]}/sites-available/default" do
