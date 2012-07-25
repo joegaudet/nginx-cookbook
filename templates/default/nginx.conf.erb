@@ -69,7 +69,7 @@ http {
   ##
   # Custom Directives
   #
-  <%= node[:nginx][:custom_directives].custom_directives.join("\n\s\s") -%>
+  <%= node[:nginx][:custom_directives].join("\n\s\s") -%>
 
   ##
   # Virtual Host Configs
