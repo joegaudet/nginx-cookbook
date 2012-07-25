@@ -46,7 +46,7 @@ http {
   <% end %>
   
   access_log	<%= node[:nginx][:log_dir] %>/access.log <%= node[:nginx][:access_log_format] %>;
-  error_log   <%= node[:nginx][:log_dir] %>/error.log <%= node[:nginx][:error_log_format] %>;
+  error_log   <%= node[:nginx][:log_dir] %>/error.log;
 
   ##
   # Gzip Settings
