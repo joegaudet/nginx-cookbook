@@ -140,6 +140,11 @@ default[:nginx][:https]   = "on"
 default[:nginx][:default_site] = true
 default[:nginx][:apps]         = {}
 
+
+# custom directives
+#
+default[:nginx][:custom_directives] = []
+
 # Status
 #
 default[:nginx][:status][:allow] = "127.0.0.1"

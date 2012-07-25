@@ -65,6 +65,11 @@ http {
     default <%= node[:nginx][:default] %>;
     https <%= node[:nginx][:https] %>;
   }
+  
+  ##
+  # Custom Directives
+  #
+  <%= node[:nginx][:custom_directives].custom_directives.join("\n\s\s") -%>
 
   ##
   # Virtual Host Configs
