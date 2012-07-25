@@ -144,6 +144,9 @@ default[:nginx][:apps]         = {}
 # custom directives
 #
 default[:nginx][:custom_directives] = []
+default[:nginx][:access_log_format] = "combined"
+default[:nginx][:error_log_format] = "combined"
+
 
 # Status
 #
