@@ -43,6 +43,10 @@ http {
   ##
   # Logging Settings
   ##
+  <% node[:nginx][:log_formats].each do |name, value| -%>
+  	log_format <%= name %> '<%= value[:string] %>';
+  <% end %>
+  
   access_log	<%= node[:nginx][:log_dir] %>/access.log <%= node[:nginx][:access_log_format] %>;
   error_log   <%= node[:nginx][:log_dir] %>/error.log <%= node[:nginx][:error_log_format] %>;
 
