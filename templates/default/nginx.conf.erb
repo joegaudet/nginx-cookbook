@@ -38,6 +38,8 @@ http {
   server_names_hash_bucket_size <%= node[:nginx][:server_names_hash_bucket_size] %>;
   server_name_in_redirect       <%= node[:nginx][:server_name_in_redirect] %>;
 
+  <%= node[:nginx][:log_formats].join("\n\s\s") -%>
+
   ##
   # Logging Settings
   ##

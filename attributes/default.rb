@@ -1,6 +1,10 @@
 default[:nginx][:version]              = "1.2.1*"
 
 default[:nginx][:dir]                  = "/etc/nginx"
+
+node[:nginx][:log_formats] = []
+default[:nginx][:access_log_format] = ""
+default[:nginx][:error_log_format] = ""
 default[:nginx][:log_dir]              = "/var/log/nginx"
 default[:nginx][:binary]               = "/usr/sbin/nginx"
 
@@ -144,8 +148,6 @@ default[:nginx][:apps]         = {}
 # custom directives
 #
 default[:nginx][:custom_directives] = []
-default[:nginx][:access_log_format] = "combined"
-default[:nginx][:error_log_format] = "combined"
 
 
 # Status
