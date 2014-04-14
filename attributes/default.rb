@@ -2,6 +2,7 @@ default[:nginx][:version]              = "1.2.1*"
 
 default[:nginx][:dir]                  = "/etc/nginx"
 
+default[:nginx][:log_formats] = {}
 default[:nginx][:access_log_format] = ""
 default[:nginx][:error_log_format] = ""
 default[:nginx][:log_dir]              = "/var/log/nginx"
